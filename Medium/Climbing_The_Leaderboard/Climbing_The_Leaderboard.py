@@ -17,14 +17,15 @@ import sys
 
 def climbingLeaderboard(ranked, player):
     # Write your code here
-    sorted_ranked_list = sorted(set(ranked),reverse=True)
-    player_rankings=[]
+    unique_ranked = sorted(set(ranked), reverse=True)
+    result = []
+    i = len(unique_ranked) - 1
     for score in player:
-        if score not in sorted_ranked_list:
-            sorted_ranked_list.append(score)
-            sorted_ranked_list = sorted(sorted_ranked_list, reverse=True)
-        player_rankings.append(sorted_ranked_list.index(score)+1)
-    return player_rankings
+        while i >= 0 and score >= unique_ranked[i]:
+            i -= 1
+        result.append(i + 2)
+    return result
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
