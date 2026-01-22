@@ -17,6 +17,7 @@ def queensAttack(n, k, r_q, c_q, obstacles):
     diag_left_down=[]
     total_attacks=0
 
+    # we will sort out all the obstacles into direction
     # store obstacles as tuples
     for pawn in obstacles:
         # RIGHT
