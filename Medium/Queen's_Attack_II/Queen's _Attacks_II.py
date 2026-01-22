@@ -43,6 +43,7 @@ def queensAttack(n, k, r_q, c_q, obstacles):
             elif pawn[0] < r_q and pawn[1] < c_q:
                 diag_left_down.append((pawn[0], pawn[1]))
 
+
     right_done=False
     left_done=False
     up_done=False
@@ -51,6 +52,7 @@ def queensAttack(n, k, r_q, c_q, obstacles):
     diag_right_down_done=False
     diag_left_up_done=False
     diag_left_down_done=False
+    
     
     for position in range(1, n):
 
